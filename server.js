@@ -6,8 +6,8 @@ var app = express();
 app.use(morgan('combined'));
 
 var content={
-    title:'',
-    heading:'',
+    title:'a lip balm girl',
+    heading:'A LIP BALM GIRL',
     content:`
     <p>The Story of "A LIP BALM GiRL" is just a feeling of the writer about the Girl.</p>
      <p>The Most interested Question is,Why  the Title is"A LIP BALM GiRL"???????<br>
