@@ -8,8 +8,8 @@ app.use(morgan('combined'));
 var content={
     title:'',
     heading:'',
-    content: '
-    <p1>The Story of "A LIP BALM GiRL" is just a feeling of the writer about the Girl.</p1>
+    content:`
+    <p>The Story of "A LIP BALM GiRL" is just a feeling of the writer about the Girl.</p>
      <p>The Most interested Question is,Why  the Title is"A LIP BALM GiRL"???????<br>
       !!!The Title is A LIP BALM GiRL, Because she used to LIP BALM  on her BeAUtYFuL PINK LIPS ...!!!</p>
 
@@ -39,12 +39,8 @@ he can't imagine what he is going to do..but with all courage initially he tried
 
 </p>
 <p></p>
-<p5><right><h9><u>....... to be continued</u></h9></right></p5> '
-    
-    
-    
-    
-             };
+<p5><right><h9><u>....... to be continued</u></h9></right></p5>`
+};
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
