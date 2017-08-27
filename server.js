@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles= {
-articletwo:{
+'article-two':{
     title:'a lip balm girl',
     heading:'A LIP BALM GIRL',
     content:`
@@ -14,7 +14,7 @@ articletwo:{
      <p>The Most interested Question is,Why  the Title is"A LIP BALM GiRL"???????<br>
       !!!The Title is A LIP BALM GiRL, Because she used to LIP BALM  on her BeAUtYFuL PINK LIPS ...!!!</p>`
 },
-articleone:{
+'article-one':{
     title:'a lip balm girl2',
     heading:'A LIP BALM GIRL',
     content:`
@@ -50,8 +50,9 @@ var htmlTemplate=`
  return htmlTemplate;
     
 }
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+app.get('/:article-two', function (req, res) {
+    var articleName=req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
 app.get('/article-one', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
