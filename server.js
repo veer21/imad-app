@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var content={
+var articletwo={
     title:'a lip balm girl',
     heading:'A LIP BALM GIRL',
     content:`
@@ -41,7 +41,12 @@ he can't imagine what he is going to do..but with all courage initially he tried
 <p></p>
 <p5><right><h9><u>....... to be continued</u></h9></right></p5>`
 };
+var htmlTemplate=`
 
+
+
+
+`;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
