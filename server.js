@@ -41,12 +41,31 @@ he can't imagine what he is going to do..but with all courage initially he tried
 <p></p>
 <p5><right><h9><u>....... to be continued</u></h9></right></p5>`
 };
+
+function createTemplate(data)
+{
+  var title=data.title;
+  var heading=data.heading;
+  var content=data.content;
+
 var htmlTemplate=`
+<html>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title><center>${title}</center></title>
+<body bgcolor=white text=blue>
+   <div> <center><h2><u>${heading}</u></h2></center></div>
+    <link href="/ui/style.css" rel="stylesheet" />
+  <div class="container">
+ ${content}
+</div>
+</body>
 
+</html>
 
-
-
-`;
+ `;
+ return htmlTemplate;
+    
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -54,7 +73,7 @@ app.get('/article-one', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 });
 app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+  res.send(createTemplate(articletwo));
 });
 app.get('/article-three', function (req, res) {
   res.send('article 3 requested here and it will be served here');
